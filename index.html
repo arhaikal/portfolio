@@ -15,29 +15,42 @@
       <ul>
         <li><a href="#services">Services</a></li>
         <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#industries">Industries</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="hero">
-      <h1>Need a Custom App, Fast?</h1>
-      <p>We help startups and growing companies launch web & mobile apps quickly — without sacrificing quality.</p>
-      <button class="cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/andrehaykal/espirally-30-min'});return false;">Book a Free 30-Min Call with Espirally</button>
+      <h1>Need a Custom Solution, Fast?</h1>
+      <p>We help startups and growing companies launch web & mobile applications quickly — without sacrificing quality.</p>
+      <button class="cta" onclick="openCalendly()">Book a Free 30-Min Call with Espirally</button>
     </div>
   </header>
 
-  <section id="services" class="highlight-section">
+  <section id="services">
     <h2>Our Services</h2>
-    <ul>
-      <li><strong>Custom Web Development:</strong> Modern websites, dashboards, and portals</li>
-      <li><strong>Mobile App Development:</strong> iOS & Android apps with React Native or native stacks</li>
-      <li><strong>UI/UX Design:</strong> Wireframes, user flows, and polished interfaces</li>
-      <li><strong>Technical Consulting:</strong> Architecture, scaling, and DevOps guidance</li>
-    </ul>
+    <div class="services-grid">
+      <div class="service-item">
+        <h3>Custom Web Development</h3>
+        <p>Modern websites, dashboards, and portals built with the latest technologies for optimal performance and user experience.</p>
+      </div>
+      <div class="service-item">
+        <h3>Mobile App Development</h3>
+        <p>iOS & Android apps with React Native or native stacks, delivering seamless cross-platform experiences.</p>
+      </div>
+      <div class="service-item">
+        <h3>UI/UX Design</h3>
+        <p>Wireframes, user flows, and polished interfaces that prioritize usability and aesthetic appeal.</p>
+      </div>
+      <div class="service-item">
+        <h3>Technical Consulting</h3>
+        <p>Architecture, scaling, and DevOps guidance to help your team make informed technical decisions.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="expertise" class="highlight-section">
+  <section id="expertise">
     <h2>Technologies & Expertise</h2>
     <div class="expertise">
       <div>
@@ -52,30 +65,67 @@
         <h3>Mobile</h3>
         <p>React Native, iOS (Swift), Android (Kotlin)</p>
       </div>
-      <div>
-        <h3>Industries</h3>
-        <ul>
-          <li>Healthcare</li>
-          <li>Banking & Fintech</li>
-          <li>E-commerce</li>
-          <li>Management & Productivity Software</li>
-          <li>Education</li>
-          <li>Wellness & Fitness</li>
-        </ul>
+    </div>
+  </section>
+
+  <section id="industries">
+    <h2>Industries We Serve</h2>
+    <div class="industries-grid">
+      <div class="industry-item">
+        <h3>Healthcare</h3>
+      </div>
+      <div class="industry-item">
+        <h3>Banking & Fintech</h3>
+      </div>
+      <div class="industry-item">
+        <h3>E-commerce</h3>
+      </div>
+      <div class="industry-item">
+        <h3>Management & Productivity Software</h3>
+      </div>
+      <div class="industry-item">
+        <h3>Education</h3>
+      </div>
+      <div class="industry-item">
+        <h3>Wellness & Fitness</h3>
       </div>
     </div>
   </section>
 
   <section id="portfolio">
     <h2>Portfolio</h2>
-    <div class="projects">
-      <div class="project">
-        <h3>Euphoria Studio</h3>
-        <p>Management software built with Ruby on Rails, including invoicing, dashboards, marketing tools, and more. Client-facing mobile app built with React Native for registration and selling products.</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <div class="portfolio-header">
+          <h3>Euphoria Studio</h3>
+          <div class="portfolio-tags">
+            <span class="tag">Ruby on Rails</span>
+            <span class="tag">React Native</span>
+            <span class="tag">Mobile App</span>
+          </div>
+        </div>
+        <p>Comprehensive management software featuring invoicing, dashboards, marketing tools, and analytics. Includes a client-facing mobile app built with React Native for seamless product registration and sales.</p>
+        <div class="portfolio-features">
+          <div class="feature">✓ Full-stack web application</div>
+          <div class="feature">✓ Cross-platform mobile app</div>
+          <div class="feature">✓ Real-time analytics</div>
+        </div>
       </div>
-      <div class="project">
-        <h3>Magnet Media</h3>
-        <p>E-commerce platform with custom CMS and Stripe integration. Built with Next.js.</p>
+      <div class="portfolio-item">
+        <div class="portfolio-header">
+          <h3>Magnet Media</h3>
+          <div class="portfolio-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">Stripe</span>
+            <span class="tag">E-commerce</span>
+          </div>
+        </div>
+        <p>Modern e-commerce platform with custom content management system and integrated payment processing. Built with Next.js for optimal performance and SEO.</p>
+        <div class="portfolio-features">
+          <div class="feature">✓ Custom CMS integration</div>
+          <div class="feature">✓ Stripe payment processing</div>
+          <div class="feature">✓ SEO optimized</div>
+        </div>
       </div>
     </div>
   </section>
@@ -101,5 +151,30 @@
   <footer>
     <p>&copy; 2025 Espirally. All rights reserved.</p>
   </footer>
+
+  <script>
+    function openCalendly() {
+      // Check if Calendly is loaded
+      if (typeof Calendly !== 'undefined') {
+        Calendly.initPopupWidget({
+          url: 'https://calendly.com/andrehaykal/espirally-30-min'
+        });
+      } else {
+        // Fallback: open Calendly in a new tab if widget isn't loaded
+        window.open('https://calendly.com/andrehaykal/espirally-30-min', '_blank');
+      }
+      return false;
+    }
+
+    // Ensure Calendly is ready when the page loads
+    window.addEventListener('load', function() {
+      // Wait a bit for async script to load
+      setTimeout(function() {
+        if (typeof Calendly === 'undefined') {
+          console.warn('Calendly widget not loaded, using fallback link');
+        }
+      }, 1000);
+    });
+  </script>
 </body>
 </html>
