@@ -6,7 +6,7 @@
   <meta name="description" content="Custom web & mobile development agency. Scalable, modern applications built by experts." />
   <title>Espirally – Web & Mobile Development Agency</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
 </head>
 <body>
   <header>
@@ -29,7 +29,7 @@
     <div class="hero">
       <h1>Need a Custom Solution, Fast?</h1>
       <p>We help startups and growing companies launch web & mobile applications quickly — without sacrificing quality.</p>
-      <button class="cta" onclick="openCalendly()">Book a Free 30-Min Call with Espirally</button>
+      <a href="https://calendly.com/andrehaykal/espirally-30-min" target="_blank" class="cta">Book a Free 30-Min Call with Espirally</a>
     </div>
   </header>
 
@@ -158,19 +158,6 @@
   </footer>
 
   <script>
-    function openCalendly() {
-      // Check if Calendly is loaded
-      if (typeof Calendly !== 'undefined') {
-        Calendly.initPopupWidget({
-          url: 'https://calendly.com/andrehaykal/espirally-30-min'
-        });
-      } else {
-        // Fallback: open Calendly in a new tab if widget isn't loaded
-        window.open('https://calendly.com/andrehaykal/espirally-30-min', '_blank');
-      }
-      return false;
-    }
-
     // Mobile menu functionality
     function toggleMobileMenu() {
       const navMenu = document.querySelector('.nav-menu');
