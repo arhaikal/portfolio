@@ -12,13 +12,18 @@
   <header>
     <nav>
       <div class="logo">Espirally</div>
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#expertise">Expertise</a></li>
-        <li><a href="#industries">Industries</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+        <li><a href="#expertise" onclick="closeMobileMenu()">Expertise</a></li>
+        <li><a href="#industries" onclick="closeMobileMenu()">Industries</a></li>
+        <li><a href="#portfolio" onclick="closeMobileMenu()">Portfolio</a></li>
+        <li><a href="#testimonials" onclick="closeMobileMenu()">Testimonials</a></li>
+        <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
       </ul>
     </nav>
     <div class="hero">
@@ -165,6 +170,33 @@
       }
       return false;
     }
+
+    // Mobile menu functionality
+    function toggleMobileMenu() {
+      const navMenu = document.querySelector('.nav-menu');
+      const toggle = document.querySelector('.mobile-menu-toggle');
+      
+      navMenu.classList.toggle('active');
+      toggle.classList.toggle('active');
+    }
+
+    function closeMobileMenu() {
+      const navMenu = document.querySelector('.nav-menu');
+      const toggle = document.querySelector('.mobile-menu-toggle');
+      
+      navMenu.classList.remove('active');
+      toggle.classList.remove('active');
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const navMenu = document.querySelector('.nav-menu');
+      const toggle = document.querySelector('.mobile-menu-toggle');
+      
+      if (!navMenu.contains(event.target) && !toggle.contains(event.target)) {
+        closeMobileMenu();
+      }
+    });
 
     // Ensure Calendly is ready when the page loads
     window.addEventListener('load', function() {
